@@ -24,6 +24,16 @@
 ```
 git clone https://github.com/ChangE71/ac_restaurant_list
 ```
+2. Consectetur adipiscing elit
+3. Integer molestie lorem at mass
+4. 
+5. 
+6. 
+
+1. 將專案clone到本地環境
+```
+git clone https://github.com/ChangE71/ac_restaurant_list
+```
 2. 進入專案資料夾
 ```
 cd restaurant_list
