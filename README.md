@@ -2,6 +2,8 @@
 採用 Node.js 和 Express 打造的餐廳清單網站，使用者可以在此站上查看餐廳訊息，並可透過餐廳名稱尋找餐廳資訊
 
 ## 專案畫面
+![show](C:\Users\ChangE\Desktop\Alpha Camp Code\restaurant_list\巴豆夭 show頁面.png)
+
 
 ## 功能描述 (features)
 - 在首頁上查看所有餐廳列表
