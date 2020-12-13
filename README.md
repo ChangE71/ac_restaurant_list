@@ -2,8 +2,10 @@
 採用 Node.js 和 Express 打造的餐廳清單網站，使用者可以在此站上查看餐廳訊息，並可透過餐廳名稱尋找餐廳資訊
 
 ## 專案畫面
-![show](C:\Users\ChangE\Desktop\Alpha Camp Code\restaurant_list\巴豆夭 show頁面.png)
 
+![home](https://github.com/ChangE71/ac_restaurant_list/blob/main/%E5%B7%B4%E8%B1%86%E5%A4%AD%20%E9%A6%96%E9%A0%81.png)
+![show](https://github.com/ChangE71/ac_restaurant_list/blob/main/%E5%B7%B4%E8%B1%86%E5%A4%AD%20show%E9%A0%81%E9%9D%A2.png)
+![search](https://github.com/ChangE71/ac_restaurant_list/blob/main/%E5%B7%B4%E8%B1%86%E5%A4%AD%20%E6%90%9C%E5%B0%8B.png)
 
 ## 功能描述 (features)
 - 在首頁上查看所有餐廳列表
