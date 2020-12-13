@@ -32,8 +32,7 @@ cd restaurant_list
 ```
 npm install
 ``` 
-4. 安裝 nodemon 套件
-提醒: 若先前在本地開發環境中以`<npm install -g nodemon>` 指令安裝過可跳至下步驟
+4. 安裝 nodemon 套件。提醒: 若先前在本地開發環境中以`<npm install -g nodemon>` 指令安裝過可跳至下步驟
 5. 啟動伺服器，執行 app.js 檔案
   -  使用 `<nodemon app.js>` 或 `<npm run dev>` 執行
   -  使用 看到回應 "server is serving" 代表成功執行
