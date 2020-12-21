@@ -28,5 +28,5 @@ app.get('/restaurants/:restaurant_id', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log('server is serving')
+  console.log('app is serving on localhost:3000')
 })
