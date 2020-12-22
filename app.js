@@ -30,6 +30,8 @@ app.get('/', (req, res) => {
     .then((restaurants) => res.render('index', { restaurants }))
     .catch((error) => console.log(error))
 })
+
+//search
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword
   console.log(keyword)
@@ -42,6 +44,15 @@ app.get('/search', (req, res) => {
       })
       return res.render('index', { restaurants, keyword })
     })
+    .catch((error) => console.log(error))
+})
+
+//delete
+app.post('/restaurants/:id/delete', (req, res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .then((restaurant) => restaurant.remove())
+    .then(() => res.redirect('/'))
     .catch((error) => console.log(error))
 })
 
