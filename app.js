@@ -30,14 +30,20 @@ app.get('/', (req, res) => {
     .then((restaurants) => res.render('index', { restaurants }))
     .catch((error) => console.log(error))
 })
-// app.get('/search', (req, res) => {
-//   const keyword = req.query.keyword
-//   console.log(keyword)
-//   const restaurants = Restaurant.lts.filter(restaurant => {
-//     return restaurant.name.toLowerCase().includes(keyword.toLowerCase()) || restaurant.name_en.toLowerCase().includes(keyword.toLowerCase())
-//   })
-//   res.render('index', { restaurants: restaurants, keyword: keyword })
-// })
+app.get('/search', (req, res) => {
+  const keyword = req.query.keyword
+  console.log(keyword)
+  Restaurant.find()
+    .lean()
+    .then(totalRestaurants => {
+      const restaurants = totalRestaurants.filter(restaurant => {
+        return restaurant.name_en.toLowerCase().includes(keyword.toLowerCase()) ||
+          restaurant.name.toLowerCase().includes(keyword.toLowerCase())
+      })
+      return res.render('index', { restaurants, keyword })
+    })
+    .catch((error) => console.log(error))
+})
 
 // app.get('/restaurants/:restaurant_id', (req, res) => {
 //   const restaurant = Restaurant.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id)
