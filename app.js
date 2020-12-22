@@ -56,6 +56,18 @@ app.post('/restaurants/:id/delete', (req, res) => {
     .catch((error) => console.log(error))
 })
 
+//create
+app.get('/restaurants/create', (req, res) => {
+  res.render('new')
+})
+
+app.post('/', (req, res) => {
+  const { name, name_en, category, location, phone, image, google_map, rating, description } = req.body
+  return Restaurant.create({ name, name_en, category, location, phone, image, google_map, rating, description })
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
+})
+
 // app.get('/restaurants/:restaurant_id', (req, res) => {
 //   const restaurant = Restaurant.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id)
 //   console.log(req.params.restaurant_id)

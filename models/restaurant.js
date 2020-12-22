@@ -5,10 +5,10 @@ const restaurantSchema = new Schema({
     type: String,
     required: true
   },
+  name_en: String,
   category: String,
   location: String,
   phone: String,
-  name_en: String,
   image: String,
   google_map: String,
   rating: Number,
