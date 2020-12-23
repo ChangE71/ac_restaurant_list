@@ -24,11 +24,23 @@ app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
+
+//view homepage & showPage
 app.get('/', (req, res) => {
   Restaurant.find()
     .lean()
     .then((restaurants) => res.render('index', { restaurants }))
     .catch((error) => console.log(error))
+})
+
+
+//把show功能拔掉後, new功能就正常了...
+app.get('/restaurants/:id', (req, res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .lean()
+    .then(restaurant => res.render('show', { restaurant }))
+    .catch(error => console.log(error))
 })
 
 //search
@@ -57,8 +69,8 @@ app.post('/restaurants/:id/delete', (req, res) => {
 })
 
 //create
-app.get('/restaurants/create', (req, res) => {
-  res.render('new')
+app.get('/restaurants/new', (req, res) => {
+  return res.render('new')
 })
 
 app.post('/', (req, res) => {
@@ -77,7 +89,7 @@ app.get('/restaurants/:id/edit', (req, res) => {
     .catch(error => console.log(error))
 })
 
-app.post('/restaurants/:id/edit', (req, res) => {
+app.post('/restaurants/:id', (req, res) => {
   const id = req.params.id
   const { name, name_en, category, location, phone, image, google_map, rating, description } = req.body
   return Restaurant.findById(id)
@@ -93,16 +105,9 @@ app.post('/restaurants/:id/edit', (req, res) => {
       restaurant.description = description
       return restaurant.save()
     })
-    .then(() => res.redirect(`/restaurants/${id}/edit`))
+    .then(() => res.redirect(`/restaurants/${id}`))
     .catch(error => console.log(error))
 })
-
-
-// app.get('/restaurants/:restaurant_id', (req, res) => {
-//   const restaurant = Restaurant.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id)
-//   console.log(req.params.restaurant_id)
-//   res.render('show', { restaurant: restaurant })
-// })
 
 app.listen(3000, () => {
   console.log('app is serving on localhost:3000')

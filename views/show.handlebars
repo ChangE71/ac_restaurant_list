@@ -1,7 +1,22 @@
 <h1 class="mb-1 restaurant-show-title">{{ restaurant.name }}</h1>
 <div class="container">
+  <ul class="d-flex justify-content-end">
+    <li class="list-unstyled">
+      <a href="./{{ restaurant._id }}/edit">edit</a>
+      <form action="./{{ restaurant._id }}/delete" method="POST" style="display: inline;">
+        <button type="submit">delete</button>
+      </form>
+    </li>
+  </ul>
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
+      <p class="mb-1">
+        <span class="text-secondary">
+          <i class="fas fa-utensils pr-2"></i>
+          餐廳英文名：
+        </span>
+        {{ restaurant.name_en }}
+      </p>
       <p class="mb-1">
         <span class="text-secondary">
           <i class="fas fa-utensils pr-2"></i>
@@ -25,6 +40,13 @@
           電話：
         </span>
         {{ restaurant.phone }}
+      </p>
+      <p class="mb-1">
+        <span class="text-secondary">
+          <i class="fas fa-utensils pr-2"></i>
+          評價：
+        </span>
+        {{ restaurant.rating }}
       </p>
       <p class="mb-5">
         {{ restaurant.description }}

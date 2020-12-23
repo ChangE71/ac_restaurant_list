@@ -15,22 +15,8 @@
           </div>
         </div>
       </form>
-      {{!-- add a restaurant --}}
-      <form action="/create" class="mt-3">
-        {{!-- <h4 class="mb-2 d-inline color: #9b4b4b"><button class="btn btn-outline-primary"
-            type="button">新增餐廳</button>
-        </h4> --}}
-        <h4 class="mb-2 d-inline color: #9b4b4b">新增餐廳：<a class="btn btn-major" type="submit" id="add-button"
-            href="/restaurants/create"><i class="fas fa-plus-circle"></i></i></a></h4>
-        <div class="input-group">
-          {{!-- <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳名稱"
-            aria-label="Restaurant Name..." value="{{keyword}}" aria-describedby="search-button"> --}}
-
-          {{!-- <form action="./restaurants/create" method="POST">
-            <button class="btn btn-major" type="submit" id="add-button"><i class="fas fa-plus-circle"></i></i></button>
-          </form> --}}
-        </div>
-      </form>
+      <h4 class="mb-2 d-inline color: #9b4b4b">新增餐廳：<a class="btn btn-major" type="submit" id="add-button"
+          href="/restaurants/new"><i class="fas fa-plus-circle"></i></a></h4>
     </div>
   </div>
 </div>
@@ -57,8 +43,7 @@
           </div>
         </a>
         <ul class="d-flex justify-content-end">
-          <li class="list-unstyled">
-            <a href="./restaurants/">detail</a>
+          <li class="list-unstyled mr-1">
             <a href="./restaurants/{{ this._id }}/edit">edit</a>
             <form action="./restaurants/{{ this._id }}/delete" method="POST" style="display: inline;">
               <button type="submit">delete</button>
