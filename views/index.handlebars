@@ -35,23 +35,17 @@
               <div class="restaurant-category mb-1">
                 <i class="fas fa-utensils pr-2"></i> {{ this.category }}
               </div>
-              <span class="badge badge-pill badge-danger font-weight-normal">
-                {{ this.rating }}
-                <i class="fas fa-star fa-xs"></i>
-              </span>
-            </div>
-          </div>
         </a>
-        <ul class="d-flex justify-content-end">
-          <li class="list-unstyled mr-1">
-            <a href="./restaurants/{{ this._id }}/edit">edit</a>
-            <form action="./restaurants/{{ this._id }}/delete" method="POST" style="display: inline;">
-              <button type="submit">delete</button>
-            </form>
-          </li>
-        </ul>
-        {{/each}}
+        <div class="d-flex justify-content-end">
+          <span class="badge badge-pill badge-danger font-weight-normal" style="vertical-align: middle;">{{ this.rating
+            }}<i class="fas fa-star fa-xs" style="vertical-align: middle;"></i></span>
+          <a class="mr-1" href="./restaurants/{{ this._id }}/edit">edit</a>
+          <form action="./restaurants/{{ this._id }}/delete" method="POST" style="display: inline;">
+            <button type="submit">delete</button>
+          </form>
+        </div>
       </div>
     </div>
+    {{/each}}
   </div>
 </div>
