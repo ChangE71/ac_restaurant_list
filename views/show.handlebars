@@ -2,10 +2,11 @@
 <div class="container">
   <ul class="d-flex justify-content-end">
     <li class="list-unstyled">
-      <a href="./{{ restaurant._id }}/edit">edit</a>
-      <form action="./{{ restaurant._id }}/delete" method="POST" style="display: inline;">
-        <button type="submit">delete</button>
-      </form>
+      <button class="badge badge-pill badge-success mr-1 ml-1">
+        <a href="./{{restaurant._id}}/edit" class="edit" style="color: white;">edit</a>
+      </button>
+      <form action="./{{ restaurant._id }}?_method=DELETE" method="POST" style="display: inline;">
+        <button class="badge badge-pill badge-danger" type="submit">delete</button>
     </li>
   </ul>
   <div class="row">
