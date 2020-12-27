@@ -8,11 +8,15 @@ router.get('/new', (req, res) => {
 })
 
 router.post('/', (req, res) => {
+  if (!req.body.image) {
+    req.body.image = 'https://dummyimage.com/600x300/096969/0ffabb.png&text=Restaurant'
+  }
   const addRestaurant = req.body
   return Restaurant.create(addRestaurant)
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
+
 
 //之前crashed原因： show 的路由寫在 new 之前，所以 new 的 api 進來之後不小心就先被當成 show 路由的動態 :id 了
 router.get('/:id', (req, res) => {
