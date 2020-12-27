@@ -23,6 +23,18 @@
 
 {{!-- restaurant list --}}
 <div class="container mt-5">
+  <div class="d-flex justify-content-end mb-3">
+    <form class="col-2" action="/sort" method="GET">
+      <select class="form-control" name="sort" id="sort" onchange="this.form.submit()"
+        style="cursor: pointer; text-align: center;">
+        <option>排序方式</option>
+        <option value="name_asc">A->Z</option>
+        <option value="name_desc">Z->A</option>
+        <option value="category">餐廳類型</option>
+        <option value="location">地區</option>
+      </select>
+    </form>
+  </div>
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
       <div class="card-columns">
